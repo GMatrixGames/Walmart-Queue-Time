@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Walmart Queue Time",
+    "version": "1.0.0",
+    "description": "Returns the estimated time to Walmart queue pages.",
+    "permissions": [],
+    "host_permissions": ["https://www.walmart.com/*"],
+    "icons": {
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.walmart.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["inject.js"],
+            "matches": ["https://www.walmart.com/*"]
+        }
+    ]
+}
